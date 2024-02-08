@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const tasksRepository =  require("./tasksRepository")
 
-// otro cambio prron
 const app = express();
 const port = 3000;
 
@@ -12,6 +11,12 @@ let tasks = [
   { id: 1, title: 'Task 1', description: 'Do something' },
   { id: 2, title: 'Task 2', description: 'Do something else' },
 ];
+
+// Get all issues
+app.get('/issues', (req, res) => {
+  var issues = [];
+  res.json(issues);
+});
 
 // Get all tasks
 app.get('/tasks', (req, res) => {
